@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motion Events</title>
+    <link rel="stylesheet" href="static/css/events.css">
+</head>
+<body>
+    <header>
+        <h1>Motion Events</h1>
+    </header>
+    <main>
+        <section class="events">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Event ID</th>
+                        <th>Motion Count</th>
+                        <th>LED Status</th>
+                        <th>Timestamp</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for event in events %}
+                    <tr>
+                        <td>{{ event.event_id }}</td>
+                        <td>{{ event.motion_count }}</td>
+                        <td>{{ event.led_status }}</td>
+                        <td>{{ event.timestamp }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="/protected_area" class="nav-link active">Dashboard</a>
+        <a href="/events" class="nav-link active">Events</a>
+    </nav>
+</body>
+</html>

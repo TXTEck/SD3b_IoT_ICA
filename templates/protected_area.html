@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Motion Detection Dashboard</title>
-    <!-- PubNub JS SDK -->
     <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.8.2.8.js"></script>
-    <!-- Custom JS -->
     <script src="static/js/main.js"></script>
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="static/css/home.css">
 </head>
 <body onload="setupPubNub();">
@@ -32,5 +29,11 @@
             </a>
         </div>
     </main>
+
+
+    <nav class="bottom-nav">
+        <a href="/protected_area" class="nav-link active">Dashboard</a>
+        <a href="/events" class="nav-link">Events</a>
+    </nav>
 </body>
 </html>

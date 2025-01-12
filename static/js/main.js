@@ -30,7 +30,6 @@ function keepAlive() {
     setTimeout(keepAlive, heartBeatRate);
 }
 
-
 // Publish a message to the PubNub channel
 const publishMessage = async (message) => {
     const publishPayload = {
@@ -60,30 +59,16 @@ function setupPubNub() {
                 document.getElementById("motion_id").innerText = messageEvent.message.motion_count;
             }
             if (messageEvent.message.led_status !== undefined) {
-                document.getElementById("led_status").innerText = messageEvent.message.led_status ? "ON" : "OFF";
+                const lightsOn = messageEvent.message.led_status;
+                document.getElementById("led_status").innerText =
+                    lightsOn === 1
+                        ? "1 Light On"
+                        : `${lightsOn} Lights On`;
             }
         },
     });
 
     pubnub.subscribe({ channels: [appChannel] });
-}
-
-// Simplify granting access (if needed)
-function grantAccess(ab) {
-    const userId = ab.id.split("-")[2];
-    const readState = document.getElementById(`read-user-${userId}`).checked;
-    const writeState = document.getElementById(`write-user-${userId}`).checked;
-
-    fetch(`/grant-${userId}-${readState}-${writeState}`, { method: "POST" })
-        .then(response => response.json())
-        .then(responseJson => {
-            console.log("Access granted:", responseJson);
-            if (responseJson.hasOwnProperty('token')) {
-                pubnub.setToken(responseJson.token);
-                pubnub.setCipherKey(responseJson.cipher_key);
-                pubnub.setUUID(responseJson.uuid);
-            }
-        });
 }
 
 // Initialize the application on page load

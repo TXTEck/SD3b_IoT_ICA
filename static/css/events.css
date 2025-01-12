@@ -37,61 +37,30 @@ main {
     align-items: center;
 }
 
-/* Dashboard Section */
-.dashboard {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+/* Events Section */
+.events {
     width: 100%;
 }
 
-.card {
-    background-color: #FFFFFF;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-    flex: 1 1 300px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #DDD;
 }
 
-.card h2 {
-    margin-bottom: 10px;
-    font-size: 1.5rem;
-    color: #0984E3;
-}
-
-.card p {
-    font-size: 2rem;
-    font-weight: bold;
-    margin: 0;
-}
-
-/* Action Section */
-.action-section {
-    margin-top: 30px;
-}
-
-.logout-button {
-    background-color: #D63031;
+th {
+    background-color: #4CAF50;
     color: #FFFFFF;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.logout-button:hover {
-    background-color: #E74C3C;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+tr:nth-child(even) {
+    background-color: #F9F9F9;
 }
 
 /* Bottom Navigation Bar */
@@ -123,10 +92,4 @@ main {
 .nav-link.active {
     color: #065A96;
     border-bottom: 2px solid #065A96;
-}
-/* Responsive Design */
-@media (max-width: 768px) {
-    .card {
-        flex: 1 1 100%;
-    }
 }
