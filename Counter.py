@@ -63,7 +63,7 @@ def write_byte(byte):
         time.sleep(0.001)
         GPIO.output(CLK, True)
         time.sleep(0.001)
-    # Wait for ACK
+ 
     GPIO.output(CLK, False)
     GPIO.setup(DIO, GPIO.IN)
     time.sleep(0.001)
@@ -90,7 +90,6 @@ def display_number(num):
     stop()
 
 def publish_message(count):
-    # Determine the number of LEDs lit
     if count >= 20:
         led_status = 2  # Both LEDs on
     elif count >= 10:
@@ -98,7 +97,6 @@ def publish_message(count):
     else:
         led_status = 0  # No LEDs on
 
-    # Construct the message
     message = {
         "motion_count": count,
         "led_status": led_status  # Number of LEDs currently lit
@@ -124,8 +122,8 @@ try:
             display_number(trigger_count)  
             
             # Turn on LEDs based on the counter value
-            GPIO.output(LED1_pin, trigger_count >= 10)  # LED1 on at count >= 10
-            GPIO.output(LED2_pin, trigger_count >= 20)  # LED2 on at count >= 20
+            GPIO.output(LED1_pin, trigger_count >= 10)  
+            GPIO.output(LED2_pin, trigger_count >= 20)  
             
             # Publish to PubNub
             publish_message(trigger_count)
