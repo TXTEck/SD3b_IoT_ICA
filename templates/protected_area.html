@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motion Detection Dashboard</title>
+    <!-- PubNub JS SDK -->
+    <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.8.2.8.js"></script>
+    <!-- Custom JS -->
+    <script src="static/js/main.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="static/css/home.css">
+</head>
+<body onload="setupPubNub();">
+    <header>
+        <h1>Motion Detection Dashboard</h1>
+    </header>
+    <main>
+        <section class="dashboard">
+            <article class="card">
+                <h2>Motion Count</h2>
+                <p id="motion_id">0</p>
+            </article>
+            <article class="card">
+                <h2>LED Status</h2>
+                <p id="led_status">0 Lights On</p>
+            </article>
+        </section>
+        <div class="action-section">
+            <a href="/logout">
+                <button class="logout-button">Logout</button>
+            </a>
+        </div>
+    </main>
+</body>
+</html>
