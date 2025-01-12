@@ -5,10 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <a href="/login"><button type="button" class="login-with-google-btn" >
-        Sign in with Google
-    </button></a>
+    <div class="banner">
+        <h1>Welcome to Dashboard</h1>
+    </div>
+    <div class="login-container">
+        <header>
+            <h2>Login</h2>
+            <p>Sign in to access your account and manage your dashboard.</p>
+        </header>
+        <main>
+            <a href="/login">
+                <button type="button" class="login-with-google-btn">
+                    Sign in with Google
+                </button>
+            </a>
+        </main>
+    </div>
 </body>
 </html>
